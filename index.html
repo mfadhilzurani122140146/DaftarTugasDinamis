@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/icon.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="assets/icon.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/icon.png" sizes="64x64" />
+    <link rel="icon" type="image/png" href="assets/icon.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="assets/icon.png" sizes="512x512" />
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-book"></i> Task List Fadhil Zurani</h1>
+        
+        <form class="task-form" id="taskForm">
+            <div class="form-row">
+                <input type="text" id="taskTitle" placeholder="✍️ Judul tugas" required>
+                <input type="date" id="taskDueDate">
+                <select id="taskPriority">
+                    <option value="low">🟢 Prioritas Rendah</option>
+                    <option value="medium">🟡 Prioritas Sedang</option>
+                    <option value="high">🔴 Prioritas Tinggi</option>
+                </select>
+                <input type="text" id="taskTags" placeholder="🏷️ Kategori Tugas">
+            </div>
+            <button type="submit"><i class="fas fa-plus"></i> Tambah Tugas</button>
+        </form>
+
+        <div class="controls">
+            <button class="filter-btn active" data-filter="all"><i class="fas fa-clipboard-list"></i> Semua</button>
+            <button class="filter-btn" data-filter="active"><i class="fas fa-play"></i> Aktif</button>
+            <button class="filter-btn" data-filter="completed"><i class="fas fa-check"></i> Selesai</button>
+            <select id="sortBy">
+                <option value="dueDate">⏰ Urutkan: Tanggal</option>
+                <option value="priority">⚡ Urutkan: Prioritas</option>
+                <option value="title">📝 Urutkan: Judul</option>
+            </select>
+        </div>
+
+        <div id="tasks" class="tasks">
+            <!-- Tasks will be inserted here -->
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="totalTasks">0</div>
+                <div class="stat-label">Total Tugas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completedTasks">0</div>
+                <div class="stat-label">Tugas Selesai</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completionRate">0%</div>
+                <div class="stat-label">Tingkat Penyelesaian</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
