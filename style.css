@@ -298,7 +298,6 @@ input[type="checkbox"]:checked:after {
   }
 }
 
-/* Task tags styling */
 .task-tags {
   display: flex;
   gap: 8px;
